@@ -18,10 +18,6 @@ public abstract class BaseDao<T, Id extends Serializable> implements GenericDao<
 	
 	private Class<T> persistanceClass;
 	
-	public BaseDao() {
-	
-	}
-	
 	public BaseDao(Class<T> persistanceClass) {
 		super();
 		this.persistanceClass = persistanceClass;

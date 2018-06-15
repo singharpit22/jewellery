@@ -7,16 +7,11 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Component;
 
 import com.rbpd.core.Customer;
-import com.rbpd.core.Product;
 
 @Component
 public class CustomerDaoImpl extends BaseDao<Customer, Long> implements CustomerDao {
 
 	public CustomerDaoImpl() {
-
-	}
-
-	public CustomerDaoImpl(Class<Product> persistanceClass) {
 		super(Customer.class);
 	}
 
