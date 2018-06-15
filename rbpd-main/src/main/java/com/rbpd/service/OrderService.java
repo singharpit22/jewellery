@@ -1,10 +1,15 @@
 package com.rbpd.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.rbpd.core.Order;
 import com.rbpd.dao.OrderDao;
 
+@Service
 public class OrderService implements GenericService<Order> {
 
+	@Autowired
 	private OrderDao orderDao;
 
 	public void save(Order order) {

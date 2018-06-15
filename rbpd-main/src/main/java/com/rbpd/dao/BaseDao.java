@@ -8,10 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
 @Transactional
 public abstract class BaseDao<T, Id extends Serializable> implements GenericDao<T, Id> {
 	
@@ -19,6 +17,10 @@ public abstract class BaseDao<T, Id extends Serializable> implements GenericDao<
 	private EntityManager entityManager;
 	
 	private Class<T> persistanceClass;
+	
+	public BaseDao() {
+	
+	}
 	
 	public BaseDao(Class<T> persistanceClass) {
 		super();

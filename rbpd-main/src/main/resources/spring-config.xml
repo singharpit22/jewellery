@@ -14,7 +14,7 @@
 
 	<import resource="entity-manager.xml" />
 	
-	<context:component-scan base-package="com.supermatch"/>
+	<context:component-scan base-package="com.rbpd"/>
 
 
 </beans>
