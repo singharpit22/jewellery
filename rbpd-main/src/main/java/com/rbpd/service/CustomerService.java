@@ -1,5 +1,7 @@
 package com.rbpd.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +19,12 @@ public class CustomerService implements GenericService<Customer> {
 	}
 
 	public void update(Customer t) {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Customer> getAll() {
+		return customerDao.findAll();
 	}
 
 }

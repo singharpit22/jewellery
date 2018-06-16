@@ -1,5 +1,6 @@
 package com.rbpd.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Query;
@@ -18,10 +19,10 @@ public class OwnerDaoImpl extends BaseDao<Owner, Long> implements OwnerDao {
 	public Owner validateCredentials(Map<String, Object> paramaters) {
 
 		String q = "select o from " + this.getPersistanceClass().getSimpleName() + " o where o.userName = :userName and o.password = :password";
-
 		final Query query = this.getEntityManager().createQuery(q);
 		paramaters.entrySet().forEach(e -> query.setParameter(e.getKey(), e.getValue()));
-		return (Owner) query.getSingleResult();
-	}
+		@SuppressWarnings("unchecked")
+		List<Owner> owners = query.getResultList();
+		return owners.get(0);	}
 
 }

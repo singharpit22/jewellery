@@ -1,5 +1,7 @@
 package com.rbpd.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class OrderService implements GenericService<Order> {
 	public void update(Order t) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Order> getAll() {
+		return orderDao.findAll();
 	}
 
 

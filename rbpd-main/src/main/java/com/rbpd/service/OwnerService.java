@@ -1,6 +1,7 @@
 package com.rbpd.service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,11 @@ public class OwnerService implements GenericService<Owner> {
 
 		return result;
 
+	}
+
+	@Override
+	public List<Owner> getAll() {
+		return ownerDao.findAll();
 	}
 
 }
